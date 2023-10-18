@@ -1,3 +1,22 @@
+# PatikaDev - React Native Kursu - Web API Ders İçi Birlikte Yap Projesi
+Bu repo [Patika](www.patika.dev) React Native programımız kapsamında "React Native Kursu - Web API" Ders İçi Birlikte Yap Projesi için oluşturulan repodur. İçerisinde bir adet "A7DukkanApp" isimli React Native uygulaması barındırmaktadır.
+
+# Installation
+Öncelikle projeyi clonelayın. 
+
+> git clone https://github.com/kahraman-mustafa/PatikaDev_ReactNative_A7DukkanApp.git
+
+# Usage
+Projeyi klonladıktan sonra Visual Studio Code programında açınız.
+Linux için:
+> cd A7DukkanApp
+> code .
+
+![Proje Resmi-2](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A7DukkanApp/master/A7DukkanApp_1.png)
+![Proje Resmi-2](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A7DukkanApp/master/A7DukkanApp_2.png)
+![Proje Resmi-3](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A7DukkanApp/master/A7DukkanApp_3.png)
+![Proje Resmi-4](https://raw.githubusercontent.com/kahraman-mustafa/PatikaDev_ReactNative_A7DukkanApp/master/A7DukkanApp_4.png)
+
 # ISSUES
 
 ## Issue 1: Cannot read variable from .env file
