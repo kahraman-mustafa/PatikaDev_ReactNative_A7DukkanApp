@@ -1,36 +1,37 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import styles from './Detail.style';
-import useFetch from '../../hooks/useFetch';
+import {Text, View} from 'react-native';
 import Config from 'react-native-config';
-import Loading from '../../components/Loading';
+import FastImage from 'react-native-fast-image';
 import Error from '../../components/Error';
+import Loading from '../../components/Loading';
+import useFetch from '../../hooks/useFetch';
+import styles from './Detail.style';
 
 const Detail = ({route}) => {
   const {id} = route.params;
-  const url = `${Config.API_URL}/${id}`;
-  const {loading, data, error} = useFetch(url);
-  /*console.log('URL: ' + url);
-  console.log('render Detail');
-  console.log({loading, data: data.length, error});
-  console.log('-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+');*/
+  const url = `${Config.API_PRODUCT_URL}/${id}`;
+  const {_loading, _data, _error} = useFetch(url);
 
-  if (loading) {
+  if (_loading) {
     return <Loading />;
   }
-  // Because backend return 200 although there is no data in response,
-  // we need to handle this case as error too.
-  if (!loading && (error || !data)) {
+  // Because backend return 200 although there is no _data in response,
+  // we need to handle this case as _error too.
+  if (!_loading && (_error || !_data)) {
     return <Error />;
   }
 
   return (
     <View style={styles.container}>
-      <Image source={{uri: data.image}} style={styles.image} />
+      <FastImage
+        source={{uri: _data.image}}
+        style={styles.image}
+        resizeMode={FastImage.resizeMode.contain}
+      />
       <View style={styles.body_container}>
-        <Text style={styles.title}>{data.title}</Text>
-        <Text style={styles.desc}>{data.description}</Text>
-        <Text style={styles.price}>{data.price} TL</Text>
+        <Text style={styles.title}>{_data.title}</Text>
+        <Text style={styles.desc}>{_data.description}</Text>
+        <Text style={styles.price}>{_data.price} TL</Text>
       </View>
     </View>
   );

@@ -8,7 +8,7 @@ export default StyleSheet.create({
   image: {
     width: Dimensions.get('window').width - 20,
     height: Dimensions.get('window').height / 3,
-    resizeMode: 'contain',
+    // resizeMode: 'contain',
     backgroundColor: 'white',
   },
   body_container: {

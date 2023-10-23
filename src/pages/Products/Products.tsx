@@ -1,17 +1,13 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import styles from './Products.style';
 import Config from 'react-native-config';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
 import ProductCard from '../../components/ProductCard';
 import useFetch from '../../hooks/useFetch';
-import Loading from '../../components/Loading';
-import Error from '../../components/Error';
 
 const Products = ({navigation}) => {
-  const {loading, data, error} = useFetch(Config.API_URL);
-  /*console.log('render');
-  console.log({loading, data: data.length, error});
-  console.log('-+-+-+-+-+-+-++-+-+-+-+-+-+-+-+-+');*/
+  const {loading, data, error} = useFetch(Config.API_PRODUCT_URL);
   const handleProductSelect = id => {
     navigation.navigate('DetailPage', {id});
   };

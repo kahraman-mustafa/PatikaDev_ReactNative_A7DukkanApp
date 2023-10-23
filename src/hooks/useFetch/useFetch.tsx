@@ -4,17 +4,19 @@ import {useState, useEffect} from 'react';
 const useFetch = (url: string) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState(null);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
-  const fetchData = async () => {
+  type FetchFn = () => Promise<void>;
+
+  const fetchData: FetchFn = async () => {
     try {
-      const {data: productData} = await axios.get(url);
-      setData(productData);
-      // console.log(productData);
+      const {data: responseData} = await axios.get(url);
+      setData(responseData);
+      // console.log(responseData);
       setLoading(false);
     } catch (error) {
       // console.log(error.message);
-      setError(error.message);
+      setError(error);
       setLoading(false);
     }
   };
